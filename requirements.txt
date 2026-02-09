@@ -1,0 +1,18 @@
+# AIG 230 – Lab 04 Requirements
+# Word Embeddings: Learning Meaning from Context
+
+# Core notebook environment
+jupyter
+ipykernel
+
+# Numerical computing
+numpy
+pandas
+
+# NLP and ML
+scikit-learn
+nltk
+gensim
+
+# Visualization
+matplotlib

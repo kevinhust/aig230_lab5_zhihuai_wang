@@ -1,120 +1,35 @@
 
-# AIG 230 – Lab 05  
-## Sequence Models with PyTorch: Learning from Ordered Text
+# NLP Assignment 5 - Text Preprocessing and Word Embeddings
 
-### Overview
+This project is for my AIG 230 NLP class. I worked on a text pipeline using Python to clean up a book and then turn the words into numbers (vectors).
 
-This lab introduces **sequence modeling**, a core concept in modern Natural Language Processing.
-Unlike previous labs that treated text as unordered collections of words or standalone embeddings,
-this lab focuses on models that **explicitly account for word order and temporal structure**.
+## What I Did
 
-You will work with **Recurrent Neural Networks (RNNs)** implemented in **PyTorch** to understand
-how models process text one token at a time and learn representations that depend on context over time.
+### Part A: Cleaning the Text
+I used **NLTK** to process the book *Alice in Wonderland*. I did things like:
+- Turning everything to lowercase.
+- Removing punctuation and grammar signs.
+- Getting rid of "stop words" (like 'the', 'is', 'at').
+- Using lemmatization to get the base form of words.
 
----
+### Part B: Turning Text into Math
+I used **scikit-learn** to represent the text in two ways:
+1. **Bag-of-Words (BoW)**: Just counting how many times words show up.
+2. **TF-IDF**: A way to see which words are actually important in a sentence.
+I also used cosine similarity to find which sentences in the book are the most similar.
 
-### Learning Objectives
+### Part C: Word Embeddings
+I trained a **Word2Vec** model using **Gensim**. 
+- I checked which words are "close" to each other (like 'alice', 'queen', etc.).
+- I also tried some word analogies (like `queen - king + alice`). It's pretty cool to see how the model learns relationships even with a small book.
 
-By completing this lab, you will be able to:
+## Tools I Used
+- **NLTK** for the basic text stuff.
+- **Scikit-learn** for the vectorizing.
+- **Gensim** for the Word2Vec model.
+- **Pandas/NumPy** for handling the data.
 
-- Explain why **word order** matters in NLP tasks
-- Describe how **sequence models** differ from bag-of-words and embedding-only approaches
-- Understand the structure and behavior of **Recurrent Neural Networks (RNNs)**
-- Work with **sequence tensors** in PyTorch
-- Trace how information flows across time steps in an RNN
-- Interpret model outputs and loss values during training
-- Connect sequence modeling to downstream NLP tasks
+## How to Run It
+1. Install everything in `requirements.txt`.
+2. Open `A5_Assignment_NLP.ipynb` and run the cells!
 
----
-
-### Topics Covered
-
-This lab builds on Week 4 and introduces foundational concepts for neural NLP models:
-
-- Limitations of bag-of-words and static embeddings  
-- Sequences and temporal dependencies in language  
-- Recurrent Neural Networks (high-level intuition)  
-- Hidden states and information flow over time  
-- Input, hidden, and output representations  
-- Tensor shapes for sequences and batches  
-- Training loops for sequence models in PyTorch  
-- Conceptual limitations of basic RNNs  
-
----
-
-### Tools and Libraries
-
-You will work with:
-
-- **PyTorch** for building and training sequence models  
-- **NLTK** for tokenization and basic preprocessing  
-- **NumPy / Pandas** for data handling  
-- **matplotlib** for visualizing training behavior  
-- **Jupyter Notebook** for interactive experimentation  
-
----
-
-### Dataset
-
-The lab uses a **small text corpus** designed to emphasize **sequence behavior and model mechanics**
-rather than large-scale performance.
-
-The goal is to understand:
-
-- How sequences are constructed
-- How tokens are processed step by step
-- How context accumulates across time
-
-This mirrors how larger neural models process real-world text.
-
----
-
-### Files in This Lab
-
-- `AIG230_Week5_Lab_Sequence_Models.ipynb`  
-  The main lab notebook.
-
-  Includes:
-  - Conceptual explanations
-  - Fully commented PyTorch code
-  - Shape and tensor walkthroughs
-  - Training loop breakdowns
-  - Checkpoint questions for understanding
-
-- `SETUP.md`  
-  Environment and installation instructions specific to Lab 05.
-
----
-
-### Instructions
-
-1. Use the provided template repository.
-2. Create a repository named `aig230-lab05-yourname`.
-3. Follow **SETUP.md** exactly before opening the notebook.
-4. Complete the notebook:
-   - Run all code cells
-   - Answer **all checkpoint questions** in markdown cells
-5. Commit and push your completed notebook to GitHub.
-6. Submit the repository link on Blackboard.
-
----
-
-### Expectations
-
-- The notebook must run from top to bottom without errors.
-- Do not delete or restructure code unless explicitly instructed.
-- Written answers must be clear, concise, and in your own words.
-- Focus on **understanding sequence behavior**, not model performance.
-
----
-
-### Key Takeaway
-
-This lab marks the transition from **static representations** to **dynamic models of language**.
-
-Sequence models are the first step toward more powerful architectures such as
-**attention mechanisms, transformers, and large language models**, which you will study next.
-
-Understanding how information flows through time is essential for everything that follows.
-
----

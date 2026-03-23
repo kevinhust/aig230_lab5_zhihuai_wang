@@ -29,7 +29,3 @@ I trained a **Word2Vec** model using **Gensim**.
 - **Gensim** for the Word2Vec model.
 - **Pandas/NumPy** for handling the data.
 
-## How to Run It
-1. Install everything in `requirements.txt`.
-2. Open `A5_Assignment_NLP.ipynb` and run the cells!
-
